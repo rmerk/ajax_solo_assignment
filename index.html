@@ -4,13 +4,21 @@
 <meta charset="UTF-8">
 <title>Title of the document</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="examples.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+
 </head>
 
 <body>
-<h1>hi</h1>
+<script id="entry-template" type="text/x-handlebars-template">
+{{! #each this iterates through an unnamed json object array}}
+
+{{#each this}}
+<p style="background-color: {{this.value}}; color: grey;">{{this.color}} = {{this.value}}</p>
+{{/each}}
 
 <div class="content-placeholder"></div>
+</script>
+<script src="examples.js"></script>
 </body>
 
 </html>
